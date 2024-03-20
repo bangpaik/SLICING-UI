@@ -1,6 +1,6 @@
 # slicing_ui
 
-A new Flutter project.
+Slicing UI Tim 5
 
 ## Getting Started
 
