@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screen_pages/1splash_screen.dart'; // Impor 1splash_screen.dart
+import 'package:slicing_ui/screen_pages/16sign_up_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(), // Mengatur SplashScreen sebagai home
+      home: SignUpScreen(), //
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
   }
