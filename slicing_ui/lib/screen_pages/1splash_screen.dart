@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:slicing_ui/screen_pages/2on_boarding1.dart';
+import 'package:slicing_ui/screen_pages/3on_boarding2.dart';
 
 
 class SplashScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => OnBoarding1()), // Ganti OnBoarding1 dengan halaman tujuan yang sesuai
+        MaterialPageRoute(builder: (context) => OnBoarding2()), // Ganti OnBoarding1 dengan halaman tujuan yang sesuai
       );
     });
 
