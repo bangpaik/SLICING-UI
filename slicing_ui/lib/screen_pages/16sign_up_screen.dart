@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:slicing_ui/screen_pages/17login_screen01.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -139,54 +140,67 @@ class SignUpScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            // Handle action
-                          },
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'images/google.png', // Path untuk logo Google
-                                height: 25, // Ukuran logo
+                        Container(
+                          decoration: BoxDecoration(
+                            color: CupertinoColors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black54,
+                                offset: Offset(0, 3),
+                                blurRadius: 5,
                               ),
-                              SizedBox(width: 8),
-                              Text('Google'),
                             ],
                           ),
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: CupertinoColors.white,
-                              foregroundColor: Colors.black54,
-                              minimumSize: Size(160, 50),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              elevation: 5),
-                        ),
-                        SizedBox(width: 10), // Spasi antara tombol
-                        ElevatedButton(
-                          onPressed: () {
-                            // Action for Google Button
-                          },
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'images/fb.png', // Path untuk logo Google
-                                height: 25, // Ukuran logo
-                              ),
-                              SizedBox(width: 8),
-                              Text('Facebook'),
-                            ],
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black54,
-                            // Warna teks pada button
-                            minimumSize: Size(150, 50),
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(5), // Radius button
+                          constraints: BoxConstraints(minWidth: 160, minHeight: 50),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'images/google.png', // Path untuk logo Google
+                                  height: 25, // Ukuran logo
+
+                                ),
+                                SizedBox(width: 8),
+                                Text('Google'),
+                              ],
                             ),
-                            elevation: 5,
+                          ),
+                        ),
+
+                        SizedBox(width: 10), // Spasi antara tombol
+                        Container(
+                          decoration: BoxDecoration(
+                            color: CupertinoColors.white,
+
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black54,
+                                offset: Offset(0, 3),
+                                blurRadius: 5,
+                              ),
+                            ],
+
+                          ),
+                          constraints: BoxConstraints(minWidth: 160, minHeight: 50),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'images/fb.png', // Path untuk logo Google
+                                  height: 35, // Ukuran logo
+
+                                ),
+                                SizedBox(width: 8),
+                                Text('Facebook'),
+
+                              ],
+
+                            ),
+
                           ),
                         ),
                       ],
@@ -312,7 +326,8 @@ class SignUpScreen extends StatelessWidget {
                         // Jarak antara lingkaran dan tombol SignUp
                         ElevatedButton(
                           onPressed: () {
-                            // Tambahkan fungsi untuk tombol SignUp
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()),
+                            );
                           },
                           child: Text("Sign Up",
                             style: TextStyle(
