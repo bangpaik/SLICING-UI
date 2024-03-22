@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:slicing_ui/screen_pages/20login_screen04.dart';
 
 class LoginScreen03 extends StatelessWidget {
   const LoginScreen03({Key? key}) : super(key: key);
@@ -17,10 +18,10 @@ class LoginScreen03 extends StatelessWidget {
             height: screenSize.height,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/bg.png'), // Ganti dengan path gambar Anda
+                image: AssetImage('images/bg.png'),
                 fit: BoxFit.fill,
                 colorFilter: ColorFilter.mode(
-                  Colors.grey.withOpacity(0.5), // Ubah opacity sesuai kebutuhan
+                  Colors.grey.withOpacity(0.5),
                   BlendMode.saturation,
                 ),
               ),
@@ -99,7 +100,7 @@ class LoginScreen03 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Welcome Back', // Contoh waktu
+                      'Welcome Back',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -110,12 +111,9 @@ class LoginScreen03 extends StatelessWidget {
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 60.0),
-                        // Penambahan padding
                         child: Text(
                           'You can search course, apply course and find scholarship for abroad studies',
-                          // Contoh waktu
                           textAlign: TextAlign.center,
-                          // Untuk membuat teks menjadi rata tengah
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
@@ -139,7 +137,6 @@ class LoginScreen03 extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Spasi antara teks dan tombol
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -162,7 +159,7 @@ class LoginScreen03 extends StatelessWidget {
                             child: Row(
                               children: [
                                 Image.asset(
-                                  'images/google.png', // Path untuk logo Google
+                                  'images/google.png',
                                   height: 25, // Ukuran logo
 
                                 ),
@@ -173,7 +170,7 @@ class LoginScreen03 extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(width: 10), // Spasi antara tombol
+                        SizedBox(width: 10),
                         Container(
                           decoration: BoxDecoration(
                             color: CupertinoColors.systemGrey3,
@@ -194,8 +191,8 @@ class LoginScreen03 extends StatelessWidget {
                             child: Row(
                               children: [
                                 Image.asset(
-                                  'images/fb.png', // Path untuk logo Google
-                                  height: 35, // Ukuran logo
+                                  'images/fb.png',
+                                  height: 35,
 
                                 ),
                                 SizedBox(width: 8),
@@ -206,7 +203,7 @@ class LoginScreen03 extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(height: 25), // Spasi antara tombol dan bidang teks
+                    SizedBox(height: 25),
                     TextField(
                       enabled: false,
                       decoration: InputDecoration(
@@ -216,10 +213,9 @@ class LoginScreen03 extends StatelessWidget {
                             vertical: 10.0, horizontal: 25.0),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.0),
-                          // Menambahkan radius outline
                           borderSide: BorderSide(
                               color: Colors
-                                  .grey), // Mengubah warna outline menjadi lebih pudar
+                                  .grey),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -227,12 +223,11 @@ class LoginScreen03 extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           onPressed: () {
-                            // Tambahkan logika untuk mengubah visibilitas password
                           },
                         ),
                       ),
                     ),
-                    SizedBox(height: 10), // Spasi antara bidang teks
+                    SizedBox(height: 10),
                     TextField(
                       enabled: false,
                       decoration: InputDecoration(
@@ -240,13 +235,11 @@ class LoginScreen03 extends StatelessWidget {
                         labelStyle: TextStyle(fontSize: 24.0),
                         contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 25.0),
-                        // Mengatur padding konten input
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.0),
-                          // Menambahkan radius outline
                           borderSide: BorderSide(
                               color: Colors
-                                  .grey), // Mengubah warna outline menjadi lebih pudar
+                                  .grey),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -254,7 +247,6 @@ class LoginScreen03 extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           onPressed: () {
-                            // Tambahkan logika untuk mengubah visibilitas password
                           },
                         ),
                       ),
@@ -277,15 +269,12 @@ class LoginScreen03 extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Spasi antara teks dan tombol
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(width: 10),
-                        // Jarak antara lingkaran dan tombol SignUp
                         ElevatedButton(
                           onPressed: () {
-                            // Tambahkan fungsi untuk tombol SignUp
                           },
                           child: Text("Login",
                             style: TextStyle(
@@ -295,7 +284,6 @@ class LoginScreen03 extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(14, 190, 127, 1),
                             foregroundColor: Colors.white,
-                            // Warna tqeks pada button
                             minimumSize: Size(350, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius:
@@ -304,18 +292,12 @@ class LoginScreen03 extends StatelessWidget {
                             elevation: 5,
                           ),
                         ),
-                      ], // Jarak antara teks dan lingkaran
+                      ],
                     ),
                     SizedBox(height: 15),
                     RichText(
                       text: TextSpan(
                         text: "Fogot password ",
-                        // recognizer: TapGestureRecognizer()
-                        //         ..onTap = (){
-                        //           Navigator.push(context, MaterialPageRoute(builder: (context)
-                        //           => Login()
-                        //           ));
-                        //         },
                         style: TextStyle(
                             color: Color.fromRGBO(14, 190, 127, 1)
                         ),
@@ -333,7 +315,7 @@ class LoginScreen03 extends StatelessWidget {
             child: SafeArea(
               child: Container(
                 padding: const EdgeInsets.only(top: 5, right: 14, left: 14),
-                height: screenSize.height * 0.4, // Ubah nilai 0.4 sesuai dengan ketinggian yang Anda inginkan
+                height: screenSize.height * 0.4,
                 alignment: Alignment.bottomCenter,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -360,13 +342,13 @@ class LoginScreen03 extends StatelessWidget {
                     ),
 
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 0.0), // Atur padding horizontal di sini
+                      padding: EdgeInsets.symmetric(horizontal: 0.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 25.0), // Tetapkan jarak top
+                            padding: const EdgeInsets.only(top: 25.0),
                             child: Text(
                               'Enter 4 Digits Code',
                               style: TextStyle(
@@ -376,7 +358,7 @@ class LoginScreen03 extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10), // Tambahkan jarak antara kedua teks
+                          SizedBox(height: 10),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
                             child: Padding(
@@ -394,7 +376,7 @@ class LoginScreen03 extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(height: 15), // Spasi antara bidang teks
+                    SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -480,7 +462,10 @@ class LoginScreen03 extends StatelessWidget {
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          // Tambahkan fungsi untuk tombol SignUp
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginScreen04()),
+                          );
                         },
                         child: Text("Continue",
                           style: TextStyle(
@@ -490,7 +475,6 @@ class LoginScreen03 extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromRGBO(14, 190, 127, 1),
                           foregroundColor: Colors.white,
-                          // Warna tqeks pada button
                           minimumSize: Size(350, 50),
                           shape: RoundedRectangleBorder(
                             borderRadius:
