@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter/gestures.dart';
 import 'package:slicing_ui/screen_pages/17login_screen01.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -19,8 +20,7 @@ class SignUpScreen extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('images/bg.png'),
-                // Ganti dengan path gambar Anda
-                fit: BoxFit.fill, // Sesuaikan dengan kebutuhan Anda
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -34,9 +34,8 @@ class SignUpScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Tambahkan widget untuk bar sinyal di sini
                     Text(
-                      '9:41', // Contoh waktu
+                      '9:41',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 14.0,
@@ -58,7 +57,6 @@ class SignUpScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // Tambahkan widget untuk bar sinyal di sini
                     Icon(
                       Icons.signal_cellular_alt,
                       color: Colors.black,
@@ -71,12 +69,10 @@ class SignUpScreen extends StatelessWidget {
                       size: 14,
                     ),
                     SizedBox(width: 5),
-                    // Tambahkan widget untuk baterai di sini
                     Image.asset(
                       "images/battery.png",
                       width: 20,
                     )
-
                     // Icons.battery_90,
                     // color: Colors.black,
                   ],
@@ -110,9 +106,7 @@ class SignUpScreen extends StatelessWidget {
                         // Penambahan padding
                         child: Text(
                           'You can search course, apply course and find scholarship for abroad studies',
-                          // Contoh waktu
                           textAlign: TextAlign.center,
-                          // Untuk membuat teks menjadi rata tengah
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
@@ -136,7 +130,6 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Spasi antara teks dan tombol
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -169,7 +162,6 @@ class SignUpScreen extends StatelessWidget {
                           ),
                         ),
 
-                        SizedBox(width: 10), // Spasi antara tombol
                         Container(
                           decoration: BoxDecoration(
                             color: CupertinoColors.white,
@@ -205,7 +197,7 @@ class SignUpScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 25), // Spasi antara tombol dan bidang teks
+                    SizedBox(height: 25),
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Name',
@@ -217,11 +209,11 @@ class SignUpScreen extends StatelessWidget {
                           // Menambahkan radius outline
                           borderSide: BorderSide(
                               color: Colors
-                                  .grey), // Mengubah warna outline menjadi lebih pudar
+                                  .grey),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10), // Spasi antara bidang teks
+                    SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Email',
@@ -233,11 +225,11 @@ class SignUpScreen extends StatelessWidget {
                           // Menambahkan radius outline
                           borderSide: BorderSide(
                               color: Colors
-                                  .grey), // Mengubah warna outline menjadi lebih pudar
+                                  .grey),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10), // Spasi antara bidang teks
+                    SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Password',
@@ -250,7 +242,7 @@ class SignUpScreen extends StatelessWidget {
                           // Menambahkan radius outline
                           borderSide: BorderSide(
                               color: Colors
-                                  .grey), // Mengubah warna outline menjadi lebih pudar
+                                  .grey),
                         ),
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -258,7 +250,6 @@ class SignUpScreen extends StatelessWidget {
                             color: Colors.grey,
                           ),
                           onPressed: () {
-                            // Tambahkan logika untuk mengubah visibilitas password
                           },
                         ),
                       ),
@@ -280,16 +271,15 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Spasi antara teks dan tombol
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          width: 15, // Lebar lingkaran
-                          height: 15, // Tinggi lingkaran
+                          width: 15,
+                          height: 15,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.grey, // Warna lingkaran
+                            color: Colors.grey,
                           ),
                         ),
                         SizedBox(width: 10),
@@ -299,7 +289,7 @@ class SignUpScreen extends StatelessWidget {
                             fontSize: 12,
                           ),
                         ),
-                        SizedBox(width: 8), // Jarak antara teks dan lingkaran
+                        SizedBox(width: 8),
                       ],
                     )
                   ],
@@ -318,12 +308,10 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Spasi antara teks dan tombol
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(width: 10),
-                        // Jarak antara lingkaran dan tombol SignUp
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()),
@@ -337,7 +325,6 @@ class SignUpScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(14, 190, 127, 1),
                             foregroundColor: Colors.white,
-                            // Warna teks pada button
                             minimumSize: Size(350, 50),
                             shape: RoundedRectangleBorder(
                               borderRadius:
@@ -358,12 +345,12 @@ class SignUpScreen extends StatelessWidget {
                           children: [
                             TextSpan(
                                 text: 'Log in',
-                                // recognizer: TapGestureRecognizer()
-                                //   ..onTap = (){
-                                //     Navigator.push(context, MaterialPageRoute(builder: (context)
-                                //     => PageLogin()
-                                //     ));
-                                //   },
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)
+                                    => LoginScreen()
+                                    ));
+                                  },
                                 style: TextStyle(
                                     color: Color.fromRGBO(14, 190, 127, 1)
                                 )
