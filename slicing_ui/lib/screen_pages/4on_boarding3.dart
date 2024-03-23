@@ -1,157 +1,188 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/3on_boarding2.dart';
 
 class OnBoarding3 extends StatelessWidget {
+  const OnBoarding3({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Container(
-        width: 300,
-        height: 600,
-        decoration: BoxDecoration(
-          color: const Color(0xffffffff),
-        ),
+    final Size screenSize = MediaQuery.of(context).size;
+
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        width: screenSize.width,
+        height: screenSize.height,
         child: Stack(
           children: [
-            Positioned(
-              left: 180,
-              width: 150,
-              top: 400,
-              height: 150,
-              child: Image.asset('images/containerImage_969.png', width: 150, height: 150,),
-            ),
-            Positioned(
-              left: 20,
-              width: 295,
-              top: 500,
-              height: 91,
-              child: Container(
-                width: 295,
-                height: 91,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+            Container(
+              width: screenSize.width,
+              height: screenSize.height,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/bg.png'),
+                  fit: BoxFit.fill,
                 ),
+              ),
+            ),
+
+            Positioned(
+              top: 0,
+              left: 0,
+              width: screenSize.width, // Mengatur lebar gambar
+              height: screenSize.height,
+              child: SafeArea(
                 child: Stack(
                   children: [
-                    Positioned(
-                      left: 135,
-                      top: 68,
-                      child: Text(
-                        'Skip',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: const Color(0xff677294), fontFamily: 'Rubik-Regular', fontWeight: FontWeight.normal),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Image.asset(
+                        'images/imageBg_169568.png',
+                        fit: BoxFit.fill,
                       ),
                     ),
-                    Positioned(
-                      left: 0,
-                      width: 295,
-                      top: 0,
-                      height: 54,
-                      child: Container(
-                        width: 295,
-                        height: 54,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color(0xff0ebe7f),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Get Started',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(decoration: TextDecoration.none, fontSize: 14, color: const Color(0xffffffff), fontFamily: 'Rubik-Medium', fontWeight: FontWeight.normal),
+
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 0.0), // Atur padding horizontal di sini
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 410.0), // Tetapkan jarak top
+                            child: Text(
+                              'Choose Best Doctors',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
-                        ),
+                          SizedBox(height: 10), // Tambahkan jarak antara kedua teks
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0), // Sesuaikan padding horizontal di sini
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 0), // Tetapkan jarak dari kanan
+                              child: Text(
+                                'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          Center(
+                            child: ElevatedButton(
+                              onPressed: () {
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => OnBoarding2()),
+                                );
+
+                              },
+                              child: Text("Get Started",
+                                style: TextStyle(
+                                    fontSize: 18
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color.fromRGBO(14, 190, 127, 1),
+                                foregroundColor: Colors.white,
+                                // Warna tqeks pada button
+                                minimumSize: Size(350, 50),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                  BorderRadius.circular(12), // Radius button
+                                ),
+                                elevation: 5,
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(height: 10), // Tambahkan jarak antara kedua teks
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0), // Sesuaikan padding horizontal di sini
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 0), // Tetapkan jarak dari kanan
+                              child: Text(
+                                'skip',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+
                   ],
+
                 ),
               ),
             ),
             Positioned(
-              left: 19,
-              width: 260,
-              top: 380,
-              height: 90,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 10,
-                    top: 0,
-                    child: Text(
-                      'Easy Appointments',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 20, color: const Color(0xff333333), fontFamily: 'Rubik-Medium', fontWeight: FontWeight.normal),
-                      maxLines: 9999,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+              top: 9,
+              left: 0,
+              right: 11,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.signal_cellular_alt,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Icon(
+                        Icons.signal_wifi_4_bar,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Image.asset(
+                        "images/battery.png",
+                        width: 20,
+                      ),
+                    ],
                   ),
-                  Positioned(
-                    left: 0,
-                    width: 260,
-                    top: 30,
-                    height: 60,
-                    child: Text(
-                      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: const Color(0xe5677294), fontFamily: 'Rubik-Regular', fontWeight: FontWeight.normal),
-                      maxLines: 9999,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             Positioned(
-              left: -50,
-              width: 300,
-              top: -50,
-              height: 300,
-              child: Image.asset('images/imageBg_169571.png', width: 300, height: 300,),
-            ),
-            Positioned(
+              top: 9,
               left: 0,
-              width: 260,
-              top: 0,
-              height: 18,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    width: 54,
-                    top: 0,
-                    height: 18,
-                    child: Text(
-                      '9:41',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(decoration: TextDecoration.none, fontSize: 10, color: const Color(0xff222222), fontFamily: 'Rubik-Bold', fontWeight: FontWeight.normal),
-                      maxLines: 9999,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+              right: 0,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '9:41',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                  Positioned(
-                    left: 250,
-                    width: 25,
-                    top: 3,
-                    height: 11,
-                    child: Image.asset('images/battery.png', width: 25, height: 11,),
-                  ),
-                  Positioned(
-                    right: 15,
-                    width: 15,
-                    top: 3,
-                    height: 10,
-                    child: Image.asset('images/imageWifi_3117.png', width: 15, height: 10,),
-                  ),
-                  Positioned(
-                    right: 30,
-                    width: 15,
-                    top: 3,
-                    height: 10,
-                    child: Image.asset('images/signal.png', width: 15, height: 10,),
-                  ),
-                ],
+                ),
               ),
             ),
           ],

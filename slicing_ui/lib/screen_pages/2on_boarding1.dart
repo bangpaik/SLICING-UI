@@ -73,25 +73,6 @@ class OnBoarding1 extends StatelessWidget {
                       ),
                     ),
 
-                    // Center(
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.only(top: 280.0), // Menggeser ke bawah sebanyak 50.0 satuan
-                    //     child: Column(
-                    //       mainAxisAlignment: MainAxisAlignment.center,
-                    //       children: [
-                    //         Text(
-                    //           'Find Trusted Doctors',
-                    //           style: TextStyle(
-                    //             fontWeight: FontWeight.bold,
-                    //             fontSize: 24,
-                    //           ),
-                    //         ),
-                    //         SizedBox(height: 20), // Jarak antara teks sebelumnya dan teks baru
-                    //
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 0.0), // Atur padding horizontal di sini
                       child: Column(
@@ -99,12 +80,12 @@ class OnBoarding1 extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 360.0), // Tetapkan jarak top
+                            padding: const EdgeInsets.only(top: 410.0), // Tetapkan jarak top
                             child: Text(
                               'Find Trusted Doctors',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 26,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
