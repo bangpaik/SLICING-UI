@@ -19,14 +19,14 @@ class OnBoarding1 extends StatelessWidget {
               top: 0,
               child: Image.asset(
                 'images/ellipse_153.png',
-                width: screenSize.width * 0.5, // Mengubah lebar gambar menjadi setengah dari lebar layar
-                height: screenSize.height * 0.5, // Mengubah tinggi gambar menjadi setengah dari tinggi layar
+                width: screenSize.width * 0.5,
+                height: screenSize.height * 0.5,
                 fit: BoxFit.fill,
               ),
             ),
             Positioned(
               left: (screenSize.width - screenSize.width * 0.5) / 2,
-              top: (screenSize.height - screenSize.height * 0.5) / 2,
+              top: (screenSize.height - screenSize.height * 0.4) / 2,
               child: Image.asset(
                 'images/ellipse_154.png',
                 width: screenSize.width * 0.5,
@@ -34,7 +34,6 @@ class OnBoarding1 extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
-
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -100,8 +99,6 @@ class OnBoarding1 extends StatelessWidget {
                 ),
               ),
             ),
-
-
             Positioned(
               left: screenSize.width * 0.06,
               top: screenSize.height * 0.63,
@@ -114,7 +111,7 @@ class OnBoarding1 extends StatelessWidget {
                     top: 0,
                     child: Text(
                       'Find Trusted Doctors',
-                      textAlign: TextAlign.center, // Mengatur teks rata tengah
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         decoration: TextDecoration.none,
                         fontSize: screenSize.width * 0.05,
@@ -131,7 +128,7 @@ class OnBoarding1 extends StatelessWidget {
                     height: screenSize.height * 0.06,
                     child: Text(
                       'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.',
-                      textAlign: TextAlign.center, // Mengatur teks rata tengah
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         decoration: TextDecoration.none,
                         fontSize: screenSize.width * 0.02,
@@ -144,9 +141,6 @@ class OnBoarding1 extends StatelessWidget {
                 ],
               ),
             ),
-
-
-
             Positioned(
               left: screenSize.width * 0.01,
               top: screenSize.height * 0.01,
