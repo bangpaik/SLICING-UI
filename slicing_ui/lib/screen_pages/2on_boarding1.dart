@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/3on_boarding2.dart';
 
 class OnBoarding1 extends StatelessWidget {
   const OnBoarding1({Key? key}) : super(key: key);
@@ -14,207 +16,192 @@ class OnBoarding1 extends StatelessWidget {
         height: screenSize.height,
         child: Stack(
           children: [
+            Container(
+              width: screenSize.width,
+              height: screenSize.height,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/bg.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
             Positioned(
+              top: 9,
               left: 0,
-              top: 0,
-              child: Image.asset(
-                'images/ellipse_153.png',
-                width: screenSize.width * 0.5, // Mengubah lebar gambar menjadi setengah dari lebar layar
-                height: screenSize.height * 0.5, // Mengubah tinggi gambar menjadi setengah dari tinggi layar
-                fit: BoxFit.fill,
-              ),
-            ),
-            Positioned(
-              left: (screenSize.width - screenSize.width * 0.5) / 2,
-              top: (screenSize.height - screenSize.height * 0.5) / 2,
-              child: Image.asset(
-                'images/ellipse_154.png',
-                width: screenSize.width * 0.5,
-                height: screenSize.height * 0.4,
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: screenSize.width * 0.38,
-                height: screenSize.height * 0.25,
-                child: GestureDetector(
-                  onTap: () {
-                    // Tambahkan navigasi ke halaman selanjutnya di sini
-                  },
-                  child: Container(
-                    width: screenSize.width * 0.38,
-                    height: screenSize.height * 0.25,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: screenSize.width * 0.10,
-                          top: screenSize.height * 0.18,
-                          child: Text(
-                            'Skip',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontSize: 10,
-                              color: const Color(0xff677294),
-                              fontFamily: 'Rubik-Regular',
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 0,
-                          width: screenSize.width * 0.22,
-                          top: 0,
-                          height: screenSize.height * 0.10,
-                          child: Container(
-                            width: screenSize.width * 0.25,
-                            height: screenSize.height * 0.10,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff0ebe7f),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Get Started',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontSize: 14,
-                                  color: const Color(0xffffffff),
-                                  fontFamily: 'Rubik-Medium',
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              right: 11,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.signal_cellular_alt,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Icon(
+                        Icons.signal_wifi_4_bar,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Image.asset(
+                        "images/battery.png",
+                        width: 20,
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-
-
             Positioned(
-              left: screenSize.width * 0.06,
-              top: screenSize.height * 0.63,
-              width: screenSize.width * 0.77,
-              height: screenSize.height * 0.14,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    top: 0,
-                    child: Text(
-                      'Find Trusted Doctors',
-                      textAlign: TextAlign.center, // Mengatur teks rata tengah
-                      style: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: screenSize.width * 0.05,
-                        color: const Color(0xff333333),
-                        fontFamily: 'Rubik-Medium',
-                        fontWeight: FontWeight.normal,
+              top: 0,
+              left: 0,
+              width: screenSize.width, // Mengatur lebar gambar
+              height: screenSize.height,
+              child: SafeArea(
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Image.asset(
+                        'images/on_board_01.png',
+                        fit: BoxFit.fill,
                       ),
                     ),
-                  ),
-                  Positioned(
-                    left: 0,
-                    width: screenSize.width * 0.77,
-                    top: screenSize.height * 0.08,
-                    height: screenSize.height * 0.06,
-                    child: Text(
-                      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.',
-                      textAlign: TextAlign.center, // Mengatur teks rata tengah
-                      style: TextStyle(
-                        decoration: TextDecoration.none,
-                        fontSize: screenSize.width * 0.02,
-                        color: const Color(0xe5677294),
-                        fontFamily: 'Rubik-Regular',
-                        fontWeight: FontWeight.normal,
+
+                    // Center(
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.only(top: 280.0), // Menggeser ke bawah sebanyak 50.0 satuan
+                    //     child: Column(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         Text(
+                    //           'Find Trusted Doctors',
+                    //           style: TextStyle(
+                    //             fontWeight: FontWeight.bold,
+                    //             fontSize: 24,
+                    //           ),
+                    //         ),
+                    //         SizedBox(height: 20), // Jarak antara teks sebelumnya dan teks baru
+                    //
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 0.0), // Atur padding horizontal di sini
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 360.0), // Tetapkan jarak top
+                            child: Text(
+                              'Find Trusted Doctors',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10), // Tambahkan jarak antara kedua teks
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0), // Sesuaikan padding horizontal di sini
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 0), // Tetapkan jarak dari kanan
+                              child: Text(
+                                'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of it over 2000 years old.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 15),
+                          Center(
+                            child: ElevatedButton(
+                              onPressed: () {
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => OnBoarding2()),
+                                );
+
+                              },
+                              child: Text("Get Started",
+                                style: TextStyle(
+                                    fontSize: 18
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color.fromRGBO(14, 190, 127, 1),
+                                foregroundColor: Colors.white,
+                                // Warna tqeks pada button
+                                minimumSize: Size(350, 50),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                  BorderRadius.circular(12), // Radius button
+                                ),
+                                elevation: 5,
+                              ),
+                            ),
+
+                          ),
+                          SizedBox(height: 10), // Tambahkan jarak antara kedua teks
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 0.0), // Sesuaikan padding horizontal di sini
+                            child: Padding(
+                              padding: EdgeInsets.only(right: 0), // Tetapkan jarak dari kanan
+                              child: Text(
+                                'skip',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ),
-                ],
+
+                  ],
+
+                ),
               ),
             ),
 
-
-
             Positioned(
-              left: screenSize.width * 0.01,
-              top: screenSize.height * 0.01,
-              width: screenSize.width * 0.95,
-              height: screenSize.height * 0.05,
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 0,
-                    width: screenSize.width * 0.95,
-                    top: 0,
-                    height: screenSize.height * 0.05,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          left: 0,
-                          width: screenSize.width * 0.15,
-                          top: 0,
-                          height: screenSize.height * 0.05,
-                          child: Text(
-                            '9:41',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontSize: 14,
-                              color: const Color(0xff222222),
-                              fontFamily: 'Rubik-Bold',
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
+              top: 9,
+              left: 0,
+              right: 0,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '9:41',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Positioned(
-                          left: screenSize.width * 0.84,
-                          width: screenSize.width * 0.06,
-                          top: screenSize.height * 0.005,
-                          height: screenSize.height * 0.025,
-                          child: Image.asset(
-                            'images/battery.png',
-                            width: screenSize.width * 0.06,
-                            height: screenSize.height * 0.025,
-                          ),
-                        ),
-                        Positioned(
-                          right: screenSize.width * 0.08,
-                          width: screenSize.width * 0.04,
-                          top: screenSize.height * 0.005,
-                          height: screenSize.height * 0.025,
-                          child: Image.asset(
-                            'images/imageWifi_3117.png',
-                            width: screenSize.width * 0.04,
-                            height: screenSize.height * 0.025,
-                          ),
-                        ),
-                        Positioned(
-                          right: screenSize.width * 0.04,
-                          width: screenSize.width * 0.05,
-                          top: screenSize.height * 0.005,
-                          height: screenSize.height * 0.025,
-                          child: Image.asset(
-                            'images/signal.png',
-                            width: screenSize.width * 0.05,
-                            height: screenSize.height * 0.025,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ],
