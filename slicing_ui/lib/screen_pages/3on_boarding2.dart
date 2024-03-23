@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slicing_ui/screen_pages/3on_boarding2.dart';
+import 'package:slicing_ui/screen_pages/4on_boarding3.dart';
 
 class OnBoarding2 extends StatelessWidget {
   const OnBoarding2({Key? key}) : super(key: key);
@@ -83,7 +83,7 @@ class OnBoarding2 extends StatelessWidget {
 
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => OnBoarding2()),
+                                  MaterialPageRoute(builder: (context) => OnBoarding3()),
                                 );
 
                               },

@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(), //
+      home: SplashScreen(), //SplashScreen
+      // home: SignUpScreen(), //SignUpScreen
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
   }
