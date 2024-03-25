@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slicing_ui/screen_pages/3on_boarding2.dart';
+import 'package:slicing_ui/screen_pages/5home_screen.dart';
 
 class OnBoarding3 extends StatelessWidget {
   const OnBoarding3({Key? key}) : super(key: key);
@@ -26,7 +26,37 @@ class OnBoarding3 extends StatelessWidget {
                 ),
               ),
             ),
-
+            Positioned(
+              top: 9,
+              left: 0,
+              right: 11,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.signal_cellular_alt,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Icon(
+                        Icons.signal_wifi_4_bar,
+                        color: Colors.black,
+                        size: 14,
+                      ),
+                      SizedBox(width: 5),
+                      Image.asset(
+                        "images/battery.png",
+                        width: 20,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
             Positioned(
               top: 0,
               left: 0,
@@ -36,9 +66,9 @@ class OnBoarding3 extends StatelessWidget {
                 child: Stack(
                   children: [
                     Align(
-                      alignment: Alignment.topRight,
+                      alignment: Alignment.topLeft,
                       child: Image.asset(
-                        'images/imageBg_169568.png',
+                        'images/imageBg_169571.png',
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -52,10 +82,10 @@ class OnBoarding3 extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 410.0), // Tetapkan jarak top
                             child: Text(
-                              'Choose Best Doctors',
+                              'Easy Appointments',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 22,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -83,7 +113,7 @@ class OnBoarding3 extends StatelessWidget {
 
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => OnBoarding2()),
+                                  MaterialPageRoute(builder: (context) => HomeScreen()),
                                 );
 
                               },
@@ -131,37 +161,7 @@ class OnBoarding3 extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              top: 9,
-              left: 0,
-              right: 11,
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(
-                        Icons.signal_cellular_alt,
-                        color: Colors.black,
-                        size: 14,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        Icons.signal_wifi_4_bar,
-                        color: Colors.black,
-                        size: 14,
-                      ),
-                      SizedBox(width: 5),
-                      Image.asset(
-                        "images/battery.png",
-                        width: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+
             Positioned(
               top: 9,
               left: 0,
