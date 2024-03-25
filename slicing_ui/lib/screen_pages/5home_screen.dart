@@ -17,8 +17,14 @@ class HomeScreen extends StatelessWidget {
           children: [
             Container(
               width: screenSize.width,
-              height: screenSize.height * 0.25, // Mengatur tinggi gambar menjadi setengah dari tinggi layar
-              color: Color.fromRGBO(14, 190, 127, 1),
+              height: screenSize.height * 0.25,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(14, 190, 127, 1),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
+                ),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -49,8 +55,64 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-
+            Positioned(
+              top: 110,
+              left: 20,
+              right: 20,
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      border: InputBorder.none,
+                      prefixIcon: Icon(Icons.search),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              left: 7,
+              top: 40,
+              child: Stack(
+                children: [
+                  Text(
+                    'LIVE',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 7,
+                      color: const Color(0xffffffff),
+                      fontFamily: 'Rubik-Medium',
+                      fontWeight: FontWeight.normal,
+                    ),
+                    maxLines: 9999,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Positioned(
+                    left: 0,
+                    top: 10,
+                    child: Image.asset(
+                      'images/livedoctors.png',
+                      width: 5.6,
+                      height: 5.6,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned.fill(
+              bottom: 0,
+              child: Image.asset(
+                'images/bg.png',
+                fit: BoxFit.fill,
+              ),
+            ),
             Positioned(
               top: 9,
               left: 0,
