@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 
 class LoginScreen04 extends StatelessWidget {
   const LoginScreen04({Key? key}) : super(key: key);
@@ -436,6 +437,11 @@ class LoginScreen04 extends StatelessWidget {
                     Center(
                       child: ElevatedButton(
                         onPressed: () {
+
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MenuScreen()),
+                          );
                         },
                         child: Text("Continue",
                           style: TextStyle(

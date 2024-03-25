@@ -67,6 +67,16 @@ flutter:
     - images/google.png
     - images/on_board_01.png
     - images/imageBg_169568.png
+    - images/bw.png
+    - images/profile.png
+    - images/close.png
+    - images/illustration.png
+    - images/img_record.png
+    - images/btn_back.png
+    - images/rp.png
+    - images/pr.png
+    - images/in.png
+    - images/up_files.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
