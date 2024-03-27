@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/1splash_screen.dart';
-import 'package:slicing_ui/screen_pages/6doctor_livechat_screen.dart';
-import 'package:slicing_ui/screen_pages/7find_doctors_screen.dart';
-import 'package:slicing_ui/screen_pages/16sign_up_screen.dart';
+import 'package:slicing_ui/screen_pages/8doctor_selecttime_screen.dart';
+import 'package:slicing_ui/screen_pages/9doctor_selecttime_screen2.dart';
+import 'package:slicing_ui/screen_pages/10populer_doctor_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FindDoctorsScreen(), //SplashScreen
+      // home: DoctorSelectTimeScreen(),
+      // home: DoctorSelectTimeScreenDua(),
+      home: PopulerDoctorScreen(),
       // home: SignUpScreen(), //SignUpScreen
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
