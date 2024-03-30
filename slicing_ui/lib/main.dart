@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/1splash_screen.dart';
 import 'package:slicing_ui/screen_pages/11favorite_doctor_screen.dart';
 import 'package:slicing_ui/screen_pages/12doctor_details_screen.dart';
+import 'package:slicing_ui/screen_pages/13doctor_appointment_screen.dart';
+import 'package:slicing_ui/screen_pages/14doctor_appointment_screen2.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: FavoriteDoctorsScreen(),
-      home: DoctorDetailsScreen(),
-      // home: PopulerDoctorScreen(),
+      // home: DoctorDetailsScreen(),
+      // home: DoctorAppointmentScreen(),
+      home: DoctorAppointmentScreenDua(),
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
   }
