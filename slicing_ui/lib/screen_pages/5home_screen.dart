@@ -43,20 +43,14 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       radius: 25,
-                      backgroundColor: Colors.white,
-                      // Tambahkan gambar lingkaran di sini
-                      child: Icon(
-                        Icons.person,
-                        color: Color.fromRGBO(14, 190, 127, 1),
-                        size: 40,
-                      ),
+                      backgroundImage: AssetImage('images/5gravatar.png'), // Tambahkan gambar di sini
                     ),
                   ),
                 ],
               ),
             ),
             Positioned(
-              top: 110,
+              top: 90,
               left: 20,
               right: 20,
               child: Container(
@@ -65,17 +59,30 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Center(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      border: InputBorder.none,
-                      prefixIcon: Icon(Icons.search),
+                child: Row(
+                  children: [
+                    SizedBox(width: 8), // Menggeser ikon pencarian ke kanan
+                    Icon(Icons.search),
+                    SizedBox(width: 8), // Menggeser sedikit ikon pencarian dan teks input
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'Search......',
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
-                  ),
+                    IconButton(
+                      icon: Icon(Icons.close),
+                      onPressed: () {
+                        // Tambahkan logika untuk menghapus teks pencarian di sini
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
+
             Positioned(
               left: 7,
               top: 40,
