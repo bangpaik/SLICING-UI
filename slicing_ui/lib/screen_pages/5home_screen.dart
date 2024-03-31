@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 90,
+              top: 110,
               left: 20,
               right: 20,
               child: Container(
@@ -120,6 +120,36 @@ class HomeScreen extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
+
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 3,
+                      offset: Offset(0, -1),
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildBottomNavBarItem('images/menuhomenew.png', () {}),
+                    _buildBottomNavBarItem('images/menulovenew.png', () {}),
+                    _buildBottomNavBarItem('images/menubook.png', () {}),
+                    _buildBottomNavBarItem('images/menuchat.png', () {}),
+                  ],
+                ),
+              ),
+            ),
+
             Positioned(
               top: 9,
               left: 0,
@@ -177,6 +207,120 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildDoctorCard(
+      String doctorName,
+      String doctorSpecialization,
+      String imagePath,
+      String likeImagePath,
+      ) {
+    return Stack(
+      children: [
+        Container(
+          width: 160,
+          height: 180,
+          decoration: BoxDecoration(
+            color: const Color(0xffffffff),
+            borderRadius: BorderRadius.circular(6),
+            boxShadow: const [
+              BoxShadow(
+                color: const Color(0x0f000000),
+                offset: Offset(0, -1),
+                blurRadius: 20,
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          left: 35,
+          width: 90,
+          top: 25,
+          height: 131,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 0,
+                width: 90,
+                top: 95,
+                height: 36,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 8,
+                      top: 0,
+                      child: Text(
+                        doctorName,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 15,
+                          color: const Color(0xff333333),
+                          fontFamily: 'Rubik-Medium',
+                          fontWeight: FontWeight.normal,
+                        ),
+                        maxLines: 9999,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    Positioned(
+                      left: 0,
+                      top: 22,
+                      child: Text(
+                        doctorSpecialization,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 12,
+                          color: const Color(0xff0ebe7e),
+                          fontFamily: 'Rubik-Regular',
+                          fontWeight: FontWeight.normal,
+                        ),
+                        maxLines: 9999,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                left: 3,
+                width: 84,
+                top: 0,
+                height: 84,
+                child: Image.asset(
+                  imagePath,
+                  width: 84,
+                  height: 84,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Positioned(
+          left: 133.117,
+          width: 16.765,
+          top: 10,
+          height: 15,
+          child: Image.asset(
+            likeImagePath,
+            width: 16.765,
+            height: 15,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBottomNavBarItem(String imagePath, Function() onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Image.asset(
+        imagePath,
+        width: 30,
+        height: 30,
       ),
     );
   }
