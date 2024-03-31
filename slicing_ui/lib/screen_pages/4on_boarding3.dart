@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/5home_screen.dart';
+import 'package:slicing_ui/screen_pages/6doctor_livechat_screen.dart';
+import 'package:slicing_ui/screen_pages/7find_doctors_screen.dart';
 
 class OnBoarding3 extends StatelessWidget {
   const OnBoarding3({Key? key}) : super(key: key);
@@ -113,7 +115,7 @@ class OnBoarding3 extends StatelessWidget {
 
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                                  MaterialPageRoute(builder: (context) => FindDoctorsScreen()),
                                 );
 
                               },
