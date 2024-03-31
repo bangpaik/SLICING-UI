@@ -1,99 +1,229 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter/gestures.dart';
-import 'package:slicing_ui/screen_pages/17login_screen01.dart';
+import 'package:shrink_sidemenu/shrink_sidemenu.dart';
+
+
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            width: screenSize.width,
-            height: screenSize.height,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromRGBO(111, 127, 161, 1),
-                  Color.fromRGBO(83, 97, 132, 1),
+    return MaterialApp(
+      title: 'Liquid Shrink SideMenu',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const MyHomePage(title: 'Liquid Ui Shrink SideMenus'),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  bool isOpened = false;
+
+  final GlobalKey<SideMenuState> _sideMenuKey = GlobalKey<SideMenuState>();
+  final GlobalKey<SideMenuState> _endSideMenuKey = GlobalKey<SideMenuState>();
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  toggleMenu([bool end = false]) {
+    if (end) {
+      final _state = _endSideMenuKey.currentState!;
+      if (_state.isOpened) {
+        _state.closeSideMenu();
+      } else {
+        _state.openSideMenu();
+      }
+    } else {
+      final _state = _sideMenuKey.currentState!;
+      if (_state.isOpened) {
+        _state.closeSideMenu();
+      } else {
+        _state.openSideMenu();
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SideMenu(
+        key: _sideMenuKey,
+        menu: buildMenu(),
+        background: Color.fromRGBO(111, 127, 161, 1),
+        type: SideMenuType.shrinkNSlide,
+        onChange: (_isOpened) {
+          setState(() => isOpened = _isOpened);
+        },
+        child: IgnorePointer(
+          ignoring: isOpened,
+          child: Scaffold(
+            appBar: AppBar(
+              centerTitle: true,
+              leading: IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () => toggleMenu(),
+              ),
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () => toggleMenu(true),
+                )
+              ],
+              title: Text(widget.title),
+            ),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  const Text(
+                    'You have pushed the button this many times:',
+                  ),
+                  Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
                 ],
               ),
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
             ),
           ),
-          Container( // Overlay for side navigation
-            width: screenSize.width * 0.7, // Adjust width as needed
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromRGBO(111, 127, 161, 1),
-                  Color.fromRGBO(83, 97, 132, 1),
-                ],
-              ),
-            ),// Adjust opacity as needed
+        ),
+      );
+
+  }
+
+  Widget buildMenu() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(vertical: 50.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset('images/profile.png'),
-                          SizedBox(width: 10), // Adding space between image and text
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Abdullah Mamun',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.phone, color: Colors.white, size: 16),
-                                  SizedBox(width: 5), // Adding space between icon and text
-                                  Text(
-                                    '0130-527300',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 12.0,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-
-                ListTile(
-                  title: Text('Item 1', style: TextStyle(color: Colors.white)),
-                  onTap: () {
-                    // Update UI based on item selected.
-                  },
+              children: const [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 22.0,
                 ),
-                ListTile(
-                  title: Text('Item 2', style: TextStyle(color: Colors.white)),
-                  onTap: () {
-                    // Update UI based on item selected.
-                  },
+                SizedBox(height: 16.0),
+                Text(
+                  "Hello, John ",
+                  style: TextStyle(color: Colors.white),
                 ),
-                // Add more list tiles for additional menu items
+                SizedBox(height: 20.0),
               ],
             ),
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(Icons.person, size: 20.0, color: Colors.white),
+            title: const Text("My Doctors"),
+            textColor: Colors.white,
+            dense: true,
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(Icons.verified_user,
+                size: 20.0, color: Colors.white),
+            title: const Text("Medical Records"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(Icons.monetization_on,
+                size: 20.0, color: Colors.white),
+            title: const Text("Payment"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(Icons.shopping_cart,
+                size: 20.0, color: Colors.white),
+            title: const Text("Medicine Orders"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.calendar_month, size: 20.0, color: Colors.white),
+            title: const Text("Test Bookings"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.privacy_tip, size: 20.0, color: Colors.white),
+            title: const Text("Privacy & Policy"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.help, size: 20.0, color: Colors.white),
+            title: const Text("Help Center"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.settings, size: 20.0, color: Colors.white),
+            title: const Text("Settings"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          SizedBox(height: 30),
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.logout, size: 20.0, color: Colors.white),
+            title: const Text("Logout"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
           ),
         ],
       ),
