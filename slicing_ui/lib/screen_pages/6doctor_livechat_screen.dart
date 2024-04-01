@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/7find_doctors_screen.dart';
 
 class LiveChatScreen extends StatelessWidget {
   const LiveChatScreen({Key? key}) : super(key: key);
@@ -31,7 +31,11 @@ class LiveChatScreen extends StatelessWidget {
               top: 45,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => FindDoctorsScreen(), // Navigasi ke FindDoctorsScreen
+                    ),
+                  );
                 },
                 child: Image.asset(
                   'images/tombol_back.png',

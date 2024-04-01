@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/11favorite_doctor_screen.dart';
 
 class PopulerDoctorScreen extends StatelessWidget {
   const PopulerDoctorScreen({Key? key}) : super(key: key);
@@ -34,7 +34,11 @@ class PopulerDoctorScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => FavoriteDoctorsScreen(), // Navigasi ke FindDoctorsScreen
+                          ),
+                        );
                       },
                       child: Image.asset(
                         'images/tombol_back.png',

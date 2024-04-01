@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/14doctor_appointment_screen2.dart';
 
 class DoctorAppointmentScreen extends StatelessWidget {
   const DoctorAppointmentScreen({Key? key}) : super(key: key);
@@ -33,7 +34,11 @@ class DoctorAppointmentScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => DoctorAppointmentScreenDua(), // Navigasi ke FindDoctorsScreen
+                          ),
+                        );
                       },
                       child: Image.asset(
                         'images/tombol_back.png',

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/10populer_doctor_screen.dart';
 
 class DoctorSelectTimeScreenDua extends StatelessWidget {
   const DoctorSelectTimeScreenDua({Key? key}) : super(key: key);
@@ -34,7 +34,11 @@ class DoctorSelectTimeScreenDua extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pop();
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PopulerDoctorScreen(), // Navigasi ke FindDoctorsScreen
+                          ),
+                        );
                       },
                       child: Image.asset(
                         'images/tombol_back.png',

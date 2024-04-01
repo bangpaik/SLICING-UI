@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/12doctor_details_screen.dart';
 
 class FavoriteDoctorsScreen extends StatelessWidget {
   const FavoriteDoctorsScreen({Key? key}) : super(key: key);
@@ -27,7 +28,11 @@ class FavoriteDoctorsScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => DoctorDetailsScreen(), // Navigasi ke FindDoctorsScreen
+                      ),
+                    );
                   },
                   child: Image.asset(
                     'images/tombol_back.png',

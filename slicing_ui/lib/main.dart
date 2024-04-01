@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //MF
+      home: SplashScreen(), //5
       // home: HomeScreen(), //5
       // home: FavoriteDoctorsScreen(), //11
       // home: DoctorDetailsScreen(), //12
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
       // home: SettingsScreen(), //
       // home: DoctorsScreen(), //
       // home: MyDoctors(), //
-      home: MedicineOrders(), //
+      // home: MedicineOrders(), //
+      // home: MenuScreen(), //
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
