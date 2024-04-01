@@ -115,7 +115,7 @@ class OnBoarding3 extends StatelessWidget {
 
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => FindDoctorsScreen()),
+                                  MaterialPageRoute(builder: (context) => HomeScreen()),
                                 );
 
                               },

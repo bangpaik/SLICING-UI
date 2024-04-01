@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/gestures.dart';
 
+import 'package:slicing_ui/screen_pages/34patient_details_screen2.dart';
+
 class PatientDetailsScreen extends StatelessWidget {
   const PatientDetailsScreen({Key? key}) : super(key: key);
 
@@ -174,7 +176,11 @@ class PatientDetailsScreen extends StatelessWidget {
                         SizedBox(width: 10),
                         ElevatedButton(
                           onPressed: () {
-
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PatientDetailsScreenDua()),
+                            );
                           },
                           child: Text(
                             "Add Tests",

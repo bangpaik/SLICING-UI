@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/6doctor_livechat_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -302,11 +303,41 @@ class HomeScreen extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             children: [
-                              _buildDoctorCard('images/livedoctor1.png'),
+                              _buildDoctorCard(
+                                imagePath: 'images/livedoctor1.png',
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LiveChatScreen(), // Navigasi ke LiveChatScreen
+                                    ),
+                                  );
+                                },
+                              ),
                               SizedBox(width: 5),
-                              _buildDoctorCard('images/livedoctor2.png'),
+                              _buildDoctorCard(
+                                imagePath: 'images/livedoctor2.png',
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LiveChatScreen(), // Navigasi ke LiveChatScreen
+                                    ),
+                                  );
+                                },
+                              ),
                               SizedBox(width: 5),
-                              _buildDoctorCard('images/livedoctor3.png'),
+                              _buildDoctorCard(
+                                imagePath: 'images/livedoctor3.png',
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LiveChatScreen(), // Navigasi ke LiveChatScreen
+                                    ),
+                                  );
+                                },
+                              ),
                             ],
                           ),
                         ),
@@ -405,15 +436,18 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDoctorCard(String imagePath) {
-    return Container(
-      width: 160,
-      height: 250,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
+  Widget _buildDoctorCard({required String imagePath, required VoidCallback onTap}) { // Menambahkan parameter imagePath dan onTap
+    return GestureDetector(
+      onTap: onTap, // Menggunakan fungsi onTap yang diberikan
+      child: Container(
+        width: 160,
+        height: 250,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          image: DecorationImage(
+            image: AssetImage(imagePath),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

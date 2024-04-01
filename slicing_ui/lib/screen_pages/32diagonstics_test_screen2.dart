@@ -6,6 +6,8 @@ import 'package:flutter/gestures.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/33patient_details_screen.dart';
+
 
 class DiagonosticTestScreenDua extends StatelessWidget {
 
@@ -85,7 +87,11 @@ class DiagonosticTestScreenDua extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => PatientDetailsScreen(), // Navigasi ke FindDoctorsScreen
+                      ),
+                    );
                   },
                   child: Image.asset(
                     'images/tombol_back.png',

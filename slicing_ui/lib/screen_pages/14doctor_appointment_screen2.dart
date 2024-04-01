@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:slicing_ui/screen_pages/16sign_up_screen.dart';
 
 class DoctorAppointmentScreenDua extends StatelessWidget {
   const DoctorAppointmentScreenDua({Key? key}) : super(key: key);
@@ -212,7 +213,10 @@ class DoctorAppointmentScreenDua extends StatelessWidget {
                                           children: [
                                             ElevatedButton(
                                               onPressed: () {
-                                                Navigator.pop(context); // Tombol "Done"
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                                                );
                                               },
                                               style: ButtonStyle(
                                                 backgroundColor: MaterialStateProperty.all(const Color(0xff0ebe7f)), // Warna latar hijau
@@ -234,6 +238,7 @@ class DoctorAppointmentScreenDua extends StatelessWidget {
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
+
                                           ],
                                         ),
 

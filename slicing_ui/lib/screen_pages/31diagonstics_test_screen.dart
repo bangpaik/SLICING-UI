@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/gestures.dart';
-import 'package:slicing_ui/screen_pages/33patient_details_screen.dart';
+import 'package:slicing_ui/screen_pages/32diagonstics_test_screen2.dart';
 
 class DiagonosticTestScreen extends StatelessWidget {
   const DiagonosticTestScreen({Key? key}) : super(key: key);
@@ -192,7 +192,7 @@ class DiagonosticTestScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PatientDetailsScreen()),
+                                  builder: (context) => DiagonosticTestScreenDua()),
                             );
                           },
                           child: Text(
