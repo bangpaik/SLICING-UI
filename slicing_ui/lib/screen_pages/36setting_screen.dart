@@ -1,5 +1,6 @@
 import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 import 'package:slicing_ui/screen_pages/28location_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -111,7 +112,7 @@ Widget _buildHeader() {
             onPressed: () {
               Navigator.push(
                 context as BuildContext,
-                MaterialPageRoute(builder: (context) => Location()),
+                MaterialPageRoute(builder: (context) => MenuScreen()),
               );
             },
             style: ElevatedButton.styleFrom(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/17login_screen01.dart';
 import 'package:slicing_ui/screen_pages/1splash_screen.dart';
+import 'package:slicing_ui/screen_pages/40profile02.dart';
 //MF
 import 'package:slicing_ui/screen_pages/5home_screen.dart';
 import 'package:slicing_ui/screen_pages/11favorite_doctor_screen.dart';
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //MF
-      home: HomeScreen(), //5
+      // home: HomeScreen(), //5
       // home: FavoriteDoctorsScreen(), //11
       // home: DoctorDetailsScreen(), //12
       // home: DoctorAppointmentScreen(), //13
@@ -45,6 +47,7 @@ class MyApp extends StatelessWidget {
       // home: DiagonosticTestScreenDua(), //32
       // home: PatientDetailsScreen(),  //33
       // home: PatientDetailsScreenDua(), //34
+      // home: PatientDetailsScreenDua(), //34
 
       //DAA
       // home: AllRecords(), //
@@ -52,6 +55,7 @@ class MyApp extends StatelessWidget {
       // home: MedicalRecordsScreen01(), //
       // home: SplashScreen(), //
       // home: SettingsScreen(), //
+      home: MenuScreen(), //
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );

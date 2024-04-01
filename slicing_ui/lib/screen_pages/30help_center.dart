@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 
 class HelpCenter extends StatelessWidget {
   @override
@@ -71,7 +72,10 @@ class HelpCenter extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Tambahkan fungsi kembali ke halaman sebelumnya
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MenuScreen()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,

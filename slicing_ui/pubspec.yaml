@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   table_calendar: ^3.0.0
   shrink_sidemenu: ^2.0.0+2-null-safety
+  keyboard_actions: ^4.2.0
 
 
 dev_dependencies:
@@ -93,6 +94,7 @@ flutter:
     - images/about.png
     - images/statistic.png
     - images/pf.png
+    - images/mr.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
