@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/17login_screen01.dart';
 import 'package:slicing_ui/screen_pages/1splash_screen.dart';
+import 'package:slicing_ui/screen_pages/38doctors_screen.dart';
 import 'package:slicing_ui/screen_pages/40profile02.dart';
 //MF
 import 'package:slicing_ui/screen_pages/5home_screen.dart';
@@ -55,7 +56,9 @@ class MyApp extends StatelessWidget {
       // home: MedicalRecordsScreen01(), //
       // home: SplashScreen(), //
       // home: SettingsScreen(), //
-      home: MenuScreen(), //
+      // home: DoctorsScreen(), //
+      // home: MyDoctors(), //
+      home: MedicineOrders(), //
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );

@@ -95,9 +95,7 @@ class SettingsScreen extends StatelessWidget {
 }
 
 Widget _buildHeader() {
-
   return
-
     Positioned(
     top: 40,
     left: 5,

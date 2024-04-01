@@ -545,7 +545,45 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(height: 30),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("Logout", style: TextStyle(fontWeight: FontWeight.bold),),
+                    content: Text("Are you sure you want to logout?", style: TextStyle(color: Colors.grey),),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Cancel",
+                        style: TextStyle(
+                          color: Color.fromRGBO(14, 190, 127, 1),
+                          fontWeight: FontWeight.bold
+                        ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          // Perform logout action here
+                          // For example, navigate to login screen
+                          Navigator.pushReplacementNamed(context, '/login');
+                        },
+                        child: Text("Ok",
+                          style: TextStyle(
+                              color: Color.fromRGBO(14, 190, 127, 1),
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ],
+
+                  );
+                },
+              );
+
+            },
             leading: const Icon(Icons.logout, size: 20.0, color: Colors.white),
             title: const Text("Logout"),
             textColor: Colors.white,

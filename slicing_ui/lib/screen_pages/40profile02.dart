@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 import  'package:keyboard_actions/keyboard_actions.dart';
+import 'package:slicing_ui/screen_pages/39profile01.dart';
 
 class Profile02 extends StatelessWidget {
   const Profile02({Key? key}) : super(key: key);
@@ -94,7 +95,7 @@ class Profile02 extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MenuScreen()),
+                          MaterialPageRoute(builder: (context) => Profile01()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

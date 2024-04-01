@@ -95,6 +95,12 @@ flutter:
     - images/statistic.png
     - images/pf.png
     - images/mr.png
+    - images/5gigi.png
+    - images/d1.png
+    - images/d2.png
+    - images/d3.png
+    - images/d4.png
+    - images/star.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
