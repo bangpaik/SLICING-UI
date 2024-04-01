@@ -95,7 +95,7 @@ class AllRecords extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MyDoctors()),
+                          MaterialPageRoute(builder: (context) => MenuScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

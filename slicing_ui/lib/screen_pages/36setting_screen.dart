@@ -64,7 +64,51 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
           ),
-          _buildHeader(),
+          Positioned(
+            top: 40,
+            left: 5,
+            right: 0,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10), // Padding dalam kotak
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MenuScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white, // Hapus latar belakang khusus dari tombol
+                      minimumSize: Size(0, 40),
+                      padding: EdgeInsets.zero, // Hapus padding tambahan
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10), // Radius button
+                      ),
+                    ),
+                    child: Container(
+                      padding: EdgeInsets.all(8.0), // Padding untuk ikon di dalam kontainer
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 16, // Ubah ukuran ikon di sini
+                        color: Color.fromRGBO(103, 114, 148, 1),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 15), // Jarak antara ikon dan teks
+                  Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Positioned(
             top: 80,
             left: 20,
@@ -94,59 +138,6 @@ class SettingsScreen extends StatelessWidget {
   }
 }
 
-Widget _buildHeader() {
-  return
-    Positioned(
-    top: 40,
-    left: 5,
-    right: 0,
-    child: Container(
-
-      padding: EdgeInsets.symmetric(horizontal: 10), // Padding dalam kotak
-
-      child: Row(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context as BuildContext,
-                MaterialPageRoute(builder: (context) => MenuScreen()),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white,
-              minimumSize: Size( 0, 40),
-              padding: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            child: Container(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                size: 16,
-                color: Color.fromRGBO(103, 114, 148, 1),
-              ),
-            ),
-          ),
-
-
-          SizedBox(width: 15),
-          Text(
-            'Settings',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-
-}
 
 Widget _buildSectionTitle(String title) {
   return Column(

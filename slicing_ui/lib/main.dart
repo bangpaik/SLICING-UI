@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
       // home: SettingsScreen(), //
       // home: DoctorsScreen(), //
       // home: MyDoctors(), //
-      home: MedicineOrders(), //
+      home: SignUpScreen(), //
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );

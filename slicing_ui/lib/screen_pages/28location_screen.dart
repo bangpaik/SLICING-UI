@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 import 'package:slicing_ui/screen_pages/24add_record_screen.dart';
+import 'package:slicing_ui/screen_pages/26all_records_screen.dart';
 import 'package:slicing_ui/screen_pages/27medicine_orders.dart';
 
 class Location extends StatelessWidget {
@@ -95,7 +96,7 @@ class Location extends StatelessWidget {
 
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MedicineOrders()),
+                          MaterialPageRoute(builder: (context) => AllRecords()),
                         );
 
                     },

@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 import 'package:slicing_ui/screen_pages/24add_record_screen.dart';
 import 'package:slicing_ui/screen_pages/26all_records_screen.dart';
+import 'package:slicing_ui/screen_pages/29medicines_orders02.dart';
 
 class MedicineOrders extends StatelessWidget {
   const MedicineOrders({Key? key}) : super(key: key);
@@ -93,7 +94,7 @@ class MedicineOrders extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AllRecords()),
+                        MaterialPageRoute(builder: (context) => MedicinesOrders02()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -174,7 +175,7 @@ class MedicineOrders extends StatelessWidget {
 
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => AddRecord()),
+                          MaterialPageRoute(builder: (context) => MedicinesOrders02()),
                         );
                       },
                       child: Text("Order medicines",

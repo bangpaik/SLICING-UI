@@ -7,6 +7,7 @@ import 'package:slicing_ui/screen_pages/23medical_records_screen01.dart';
 import 'package:slicing_ui/screen_pages/27medicine_orders.dart';
 import 'package:slicing_ui/screen_pages/30help_center.dart';
 import 'package:slicing_ui/screen_pages/36setting_screen.dart';
+import 'package:slicing_ui/screen_pages/38doctors_screen.dart';
 import 'package:slicing_ui/screen_pages/39profile01.dart';
 
 void main() {
@@ -566,9 +567,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Perform logout action here
-                          // For example, navigate to login screen
-                          Navigator.pushReplacementNamed(context, '/login');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DoctorsScreen()),
+                          );
                         },
                         child: Text("Ok",
                           style: TextStyle(

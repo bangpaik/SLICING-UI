@@ -438,10 +438,10 @@ class LoginScreen04 extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
 
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => MenuScreen()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MenuScreen()),
+                          );
                         },
                         child: Text("Continue",
                           style: TextStyle(
