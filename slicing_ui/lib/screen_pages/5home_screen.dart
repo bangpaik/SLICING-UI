@@ -9,308 +9,455 @@ class HomeScreen extends StatelessWidget {
     final Size screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        width: screenSize.width,
-        height: screenSize.height,
-        child: Stack(
-          children: [
-            Container(
-              width: screenSize.width,
-              height: screenSize.height * 0.25,
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(14, 190, 127, 1),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0),
-                ),
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          width: screenSize.width,
+          child: Stack(
+            children: [
+              Image.asset(
+                "images/bg.png",
+                fit: BoxFit.cover,
+                width: screenSize.width,
+                height: screenSize.height,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Hi, Find Your Doctor',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      radius: 25,
-                      backgroundImage: AssetImage('images/5gravatar.png'), // Tambahkan gambar di sini
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              top: 110,
-              left: 20,
-              right: 20,
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(width: 8), // Menggeser ikon pencarian ke kanan
-                    Icon(Icons.search),
-                    SizedBox(width: 8), // Menggeser sedikit ikon pencarian dan teks input
-                    Expanded(
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'Search......',
-                          border: InputBorder.none,
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '9:41',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () {
-                        // Tambahkan logika untuk menghapus teks pencarian di sini
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            Positioned(
-              left: 7,
-              top: 40,
-              child: Stack(
-                children: [
-                  Text(
-                    'LIVE',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      decoration: TextDecoration.none,
-                      fontSize: 7,
-                      color: const Color(0xffffffff),
-                      fontFamily: 'Rubik-Medium',
-                      fontWeight: FontWeight.normal,
-                    ),
-                    maxLines: 9999,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Positioned(
-                    left: 0,
-                    top: 10,
-                    child: Image.asset(
-                      'images/livedoctors.png',
-                      width: 5.6,
-                      height: 5.6,
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            Positioned.fill(
-              bottom: 0,
-              child: Image.asset(
-                'images/bg.png',
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Container(
-                height: 60,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 1,
-                      blurRadius: 3,
-                      offset: Offset(0, -1),
-                    ),
-                  ],
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+              ),
+
+
+              Positioned(
+                left: 20,
+                width: 500,
+                top: 665,
+                height: 21,
+                child: Stack(
                   children: [
-                    _buildBottomNavBarItem('images/menuhomenew.png', () {}),
-                    _buildBottomNavBarItem('images/menulovenew.png', () {}),
-                    _buildBottomNavBarItem('images/menubook.png', () {}),
-                    _buildBottomNavBarItem('images/menuchat.png', () {}),
-                  ],
-                ),
-              ),
-            ),
-
-            Positioned(
-              top: 9,
-              left: 0,
-              right: 11,
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(
-                        Icons.signal_cellular_alt,
-                        color: Colors.white,
-                        size: 14,
-                      ),
-                      SizedBox(width: 5),
-                      Icon(
-                        Icons.signal_wifi_4_bar,
-                        color: Colors.white,
-                        size: 14,
-                      ),
-                      SizedBox(width: 5),
-                      Image.asset(
-                        "images/battery.png",
-                        width: 20,
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 5,
-              left: 0,
-              right: 0,
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '9:41',
+                    Positioned(
+                      left: 0,
+                      top: 0,
+                      child: Text(
+                        'Popular Doctor',
+                        textAlign: TextAlign.left,
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14.0,
+                          decoration: TextDecoration.none,
+                          fontSize: 18,
+                          color: const Color(0xff333333),
+                          fontFamily: 'Rubik-Medium',
                           fontWeight: FontWeight.bold,
                         ),
+                        maxLines: 9999,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ],
-                  ),
+                    ),
+                    Positioned(
+                      left: 400,
+                      width: 500,
+                      top: 6,
+                      height: 12,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            child: Text(
+                              'See all',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 10,
+                                color: const Color(0xff677294),
+                                fontFamily: 'Rubik-Light',
+                                fontWeight: FontWeight.normal,
+                              ),
+                              maxLines: 9999,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Positioned(
+                            left: 33,
+                            width: 3.385,
+                            top: 5,
+                            height: 6.283,
+                            child: Image.asset(
+                              'images/panah_kanan.png',
+                              width: 3.385,
+                              height: 6.283,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
+
+              Positioned(
+                left: 20,
+                width: 500,
+                top: 1070,
+                height: 21,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 0,
+                      top: 0,
+                      child: Text(
+                        'Feature Doctor',
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          decoration: TextDecoration.none,
+                          fontSize: 18,
+                          color: const Color(0xff333333),
+                          fontFamily: 'Rubik-Medium',
+                          fontWeight: FontWeight.bold,
+                        ),
+                        maxLines: 9999,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    Positioned(
+                      left: 400,
+                      width: 500,
+                      top: 6,
+                      height: 12,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            left: 0,
+                            top: 0,
+                            child: Text(
+                              'See all',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 10,
+                                color: const Color(0xff677294),
+                                fontFamily: 'Rubik-Light',
+                                fontWeight: FontWeight.normal,
+                              ),
+                              maxLines: 9999,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Positioned(
+                            left: 33,
+                            width: 3.385,
+                            top: 5,
+                            height: 6.283,
+                            child: Image.asset(
+                              'images/panah_kanan.png',
+                              width: 3.385,
+                              height: 6.283,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Positioned(
+                    top: 0,
+                    left: 0,
+                    right: 11,
+                    child: SafeArea(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(
+                              Icons.signal_cellular_alt,
+                              color: Colors.black,
+                              size: 14,
+                            ),
+                            SizedBox(width: 5),
+                            Icon(
+                              Icons.signal_wifi_4_bar,
+                              color: Colors.black,
+                              size: 14,
+                            ),
+                            SizedBox(width: 5),
+                            Image.asset(
+                              "images/battery.png",
+                              width: 20,
+                            )
+                            // Icons.battery_90,
+                            // color: Colors.black,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: screenSize.height * 0.25,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(14, 190, 127, 1),
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(20.0),
+                        bottomRight: Radius.circular(20.0),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 20), // Batas left: 20
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 5), // Jarak antara gravatar dan teks
+                              Text(
+                                '\n\nHi Handwerker!',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              Text(
+                                'Find Your Doctor',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundImage: AssetImage('images/5gravatar.png'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.search),
+                            SizedBox(width: 8),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: 'Search.....',
+                                  border: InputBorder.none,
+                                ),
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.close),
+                              onPressed: () {
+                                // Tambahkan logika untuk menghapus teks pencarian di sini
+                              },
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Live Doctors',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              _buildDoctorCard('images/livedoctor1.png'),
+                              SizedBox(width: 5),
+                              _buildDoctorCard('images/livedoctor2.png'),
+                              SizedBox(width: 5),
+                              _buildDoctorCard('images/livedoctor3.png'),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              _buildIconCard('images/5gigi.png'),
+                              SizedBox(width: 5),
+                              _buildIconCard('images/5jantung.png'),
+                              SizedBox(width: 5),
+                              _buildIconCard('images/5mata.png'),
+                              SizedBox(width: 5),
+                              _buildIconCard('images/5pinggang.png'),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          '',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              _buildPopulerDoctorCard('images/5populerdoctor1.png'),
+                              SizedBox(width: 15),
+                              _buildPopulerDoctorCard('images/5populerdoctor2.png'),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          '',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              _buildFeatureDoctorCard('images/5featuredoctor1.png'),
+                              SizedBox(width: 15),
+                              _buildFeatureDoctorCard('images/5featuredoctor2.png'),
+                              SizedBox(width: 15),
+                              _buildFeatureDoctorCard('images/5featuredoctor3.png'),
+                              SizedBox(width: 15),
+                              _buildFeatureDoctorCard('images/5featuredoctor4.png'),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 60), // Untuk memberi ruang di bagian bawah agar semua konten dapat di-scroll
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 3,
+              offset: Offset(0, -1),
             ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildBottomNavBarItem('images/menuhomenew.png', () {}),
+            _buildBottomNavBarItem('images/menulovenew.png', () {}),
+            _buildBottomNavBarItem('images/menubook.png', () {}),
+            _buildBottomNavBarItem('images/menuchat.png', () {}),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildDoctorCard(
-      String doctorName,
-      String doctorSpecialization,
-      String imagePath,
-      String likeImagePath,
-      ) {
-    return Stack(
-      children: [
-        Container(
-          width: 160,
-          height: 180,
-          decoration: BoxDecoration(
-            color: const Color(0xffffffff),
-            borderRadius: BorderRadius.circular(6),
-            boxShadow: const [
-              BoxShadow(
-                color: const Color(0x0f000000),
-                offset: Offset(0, -1),
-                blurRadius: 20,
-              ),
-            ],
-          ),
+  Widget _buildDoctorCard(String imagePath) {
+    return Container(
+      width: 160,
+      height: 250,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
         ),
-        Positioned(
-          left: 35,
-          width: 90,
-          top: 25,
-          height: 131,
-          child: Stack(
-            children: [
-              Positioned(
-                left: 0,
-                width: 90,
-                top: 95,
-                height: 36,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 8,
-                      top: 0,
-                      child: Text(
-                        doctorName,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 15,
-                          color: const Color(0xff333333),
-                          fontFamily: 'Rubik-Medium',
-                          fontWeight: FontWeight.normal,
-                        ),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Positioned(
-                      left: 0,
-                      top: 22,
-                      child: Text(
-                        doctorSpecialization,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          decoration: TextDecoration.none,
-                          fontSize: 12,
-                          color: const Color(0xff0ebe7e),
-                          fontFamily: 'Rubik-Regular',
-                          fontWeight: FontWeight.normal,
-                        ),
-                        maxLines: 9999,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                left: 3,
-                width: 84,
-                top: 0,
-                height: 84,
-                child: Image.asset(
-                  imagePath,
-                  width: 84,
-                  height: 84,
-                ),
-              ),
-            ],
-          ),
+      ),
+    );
+  }
+
+  Widget _buildPopulerDoctorCard(String imagePath) {
+    return Container(
+      width: 250,
+      height: 350,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
         ),
-        Positioned(
-          left: 133.117,
-          width: 16.765,
-          top: 10,
-          height: 15,
-          child: Image.asset(
-            likeImagePath,
-            width: 16.765,
-            height: 15,
-          ),
+      ),
+    );
+  }
+
+  Widget _buildFeatureDoctorCard(String imagePath) {
+    return Container(
+      width: 125,
+      height: 150,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
         ),
-      ],
+      ),
+    );
+  }
+
+  Widget _buildIconCard(String imagePath) {
+    return Container(
+      width: 112,
+      height: 100,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 
