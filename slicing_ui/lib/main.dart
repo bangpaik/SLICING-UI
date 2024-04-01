@@ -39,28 +39,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //MF
-      home: SplashScreen(), //5
-      // home: HomeScreen(), //5
-      // home: FavoriteDoctorsScreen(), //11
-      // home: DoctorDetailsScreen(), //12
-      // home: DoctorAppointmentScreen(), //13
-      // home: DoctorAppointmentScreenDua(), //14
-      // home: DiagonosticTestScreen(), //31
-      // home: DiagonosticTestScreenDua(), //32
-      // home: PatientDetailsScreen(),  //33
-      // home: PatientDetailsScreenDua(), //34
-      // home: PatientDetailsScreenDua(), //34
-
-      //DAA
-      // home: AllRecords(), //
-      // home: Location(), //
-      // home: MedicalRecordsScreen01(), //
-      // home: SplashScreen(), //
-      // home: SettingsScreen(), //
-      // home: DoctorsScreen(), //
-      // home: MyDoctors(), //
-      // home: MedicineOrders(), //
-      // home: MenuScreen(), //
+      // home: SplashScreen(), //5
+      home: DiagonosticTestScreen(), //31
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
