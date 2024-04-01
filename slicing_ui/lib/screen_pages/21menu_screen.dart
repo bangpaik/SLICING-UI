@@ -200,6 +200,103 @@ class _MyHomePageState extends State<MyHomePage> {
                           // Tambahkan logika untuk menghapus teks pencarian di sini
                         },
                       ),
+
+                    ],
+                  ),
+                ),
+              ),
+
+              Positioned(
+                left: 0,
+                top: 180,
+                right: 0,
+                child:  Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                      SizedBox(height: 20),
+                      Text(
+                        'Live Doctors',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildDoctorCard('images/livedoctor1.png'),
+                            SizedBox(width: 5),
+                            _buildDoctorCard('images/livedoctor2.png'),
+                            SizedBox(width: 5),
+                            _buildDoctorCard('images/livedoctor3.png'),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildIconCard('images/5gigi.png'),
+                            SizedBox(width: 5),
+                            _buildIconCard('images/5jantung.png'),
+                            SizedBox(width: 5),
+                            _buildIconCard('images/5mata.png'),
+                            SizedBox(width: 5),
+                            _buildIconCard('images/5pinggang.png'),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        '',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildPopulerDoctorCard('images/5populerdoctor1.png'),
+                            SizedBox(width: 15),
+                            _buildPopulerDoctorCard('images/5populerdoctor2.png'),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        '',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            _buildFeatureDoctorCard('images/5featuredoctor1.png'),
+                            SizedBox(width: 15),
+                            _buildFeatureDoctorCard('images/5featuredoctor2.png'),
+                            SizedBox(width: 15),
+                            _buildFeatureDoctorCard('images/5featuredoctor3.png'),
+                            SizedBox(width: 15),
+                            _buildFeatureDoctorCard('images/5featuredoctor4.png'),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -216,10 +313,98 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
 
+        bottomNavigationBar: Container(
+          height: 60,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(0, -1),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildBottomNavBarItem('images/menuhomenew.png', () {}),
+              _buildBottomNavBarItem('images/menulovenew.png', () {}),
+              _buildBottomNavBarItem('images/menubook.png', () {}),
+              _buildBottomNavBarItem('images/menuchat.png', () {}),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildDoctorCard(String imagePath) {
+    return Container(
+      width: 160,
+      height: 250,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
 
+  Widget _buildPopulerDoctorCard(String imagePath) {
+    return Container(
+      width: 250,
+      height: 350,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFeatureDoctorCard(String imagePath) {
+    return Container(
+      width: 125,
+      height: 150,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildIconCard(String imagePath) {
+    return Container(
+      width: 112,
+      height: 100,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBottomNavBarItem(String imagePath, Function() onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Image.asset(
+        imagePath,
+        width: 30,
+        height: 30,
+      ),
+    );
+  }
   Widget buildMenu() {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 50.0),
