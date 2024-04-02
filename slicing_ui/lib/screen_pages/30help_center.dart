@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:slicing_ui/screen_pages/21menu_screen.dart';
 
+import 'package:slicing_ui/screen_pages/31diagonstics_test_screen.dart'; // Import halaman Diagnostik Test
+
 class HelpCenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -155,7 +157,12 @@ class HelpCenter extends StatelessWidget {
                 _buildListItem(context, 'Online consultations', trailingIcon: Icons.navigate_next),
                 _buildListItem(context, 'Feedbacks', trailingIcon: Icons.navigate_next),
                 _buildListItem(context, 'Medicine orders', trailingIcon: Icons.navigate_next),
-                _buildListItem(context, 'Diagnostic Tests', trailingIcon: Icons.navigate_next),
+                _buildListItem(context, 'Diagnostic Tests', trailingIcon: Icons.navigate_next, onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>DiagonosticTestScreen()),
+                  );
+                }),
                 _buildListItem(context, 'Health plans', trailingIcon: Icons.navigate_next),
                 _buildListItem(context, 'My account and Practo Drive', trailingIcon: Icons.navigate_next),
                 _buildListItem(context, 'Have a feature in mind', trailingIcon: Icons.navigate_next),
@@ -174,9 +181,9 @@ class HelpCenter extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(50),
                 ),
-            ),
+              ),
 
-          ),
+            ),
           )
         ],
       ),
@@ -184,7 +191,7 @@ class HelpCenter extends StatelessWidget {
   }
 }
 
-Widget _buildListItem(BuildContext context, String title, {String trailingText = '', IconData? trailingIcon}) {
+Widget _buildListItem(BuildContext context, String title, {String trailingText = '', IconData? trailingIcon, VoidCallback? onTap}) {
   return Container(
     child: ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 0),
@@ -211,7 +218,7 @@ Widget _buildListItem(BuildContext context, String title, {String trailingText =
           if (trailingIcon != null) Icon(trailingIcon),
         ],
       ),
-      //
+      onTap: onTap,
       onLongPress: () {
         // Jika ingin menambahkan fungsi untuk aksi long press
       },
@@ -219,3 +226,8 @@ Widget _buildListItem(BuildContext context, String title, {String trailingText =
   );
 }
 
+void main() {
+  runApp(MaterialApp(
+    home: HelpCenter(),
+  ));
+}

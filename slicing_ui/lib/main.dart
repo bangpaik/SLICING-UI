@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //MF
-      // home: SplashScreen(), //5
-      home: DiagonosticTestScreen(), //31
+      home: HelpCenter(), //5
+      // home: DiagonosticTestScreen(), //31
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
     );
