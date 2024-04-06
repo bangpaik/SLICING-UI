@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Tim 5',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       //MF
-      home: SplashScreen(),
+      home: DoctorAppointmentScreenDua(),
       // home: DiagonosticTestScreen(), //31
 
       debugShowCheckedModeBanner: false, // Menghilangkan banner debug
